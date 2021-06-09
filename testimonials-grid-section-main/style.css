@@ -1,0 +1,179 @@
+
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-grayish-blue);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
+
+.wrapper {
+    max-width: 650px;
+    width: 95%;
+    margin: 50px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: minmax(150px, 1fr) ;
+    grid-template-rows: repeat(5, auto);
+}
+
+.card {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 20px 10px;
+}
+
+.card li:nth-child(odd) {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--light-gray);
+}
+
+.card li:nth-child(even) {
+    font-size: 13px;
+    font-weight: 500;
+    color: hsla(0, 0%, 81%,0.5);
+}
+
+.card img {
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.card h2, p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.card .header {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.card h2 {
+    margin-bottom: 18px;
+    color: hsl(0, 0%, 100%);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.card p {
+    font-size: 13px;
+    color: hsla(0, 0%, 81%,0.8);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* card-1 styling*/
+.card-1 {
+    background-color: var(--moderate-violet);
+}
+
+
+.card-2 {
+    background-color: var(--very-dark-grayish-blue);
+
+}
+
+.card-3 {
+    background-color: var(--white);
+
+}
+
+.card-4 {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.card-5 {
+    background-color: var(--white);
+}
+
+/* seperate styling for cards 3 and 5 */
+
+.card-3 .header li:nth-child(odd), .card-5 .header li:nth-child(odd) {
+    color: var(--very-dark-grayish-blue) ;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.card-3 .header li:nth-child(even), .card-5 .header li:nth-child(even) {
+    color: hsla(217, 19%, 35%,0.5);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.card-3 h2, .card-5 h2 {
+    color: var(--very-dark-blackish-blue);
+}
+
+.card-3 p, .card-5 p {
+    color: hsla(217, 19%, 35%,0.8);
+}
+
+
+
+/* desktop version */
+
+@media( min-width : 1100px ) {
+
+    .wrapper {
+        max-width: 100%;
+        display: grid;
+        margin: 50px auto;
+        grid-template-columns: repeat(4, minmax(240px, 1fr));
+        grid-template-rows: (2, 200px);
+        grid-template-areas: 
+        'd d jw k'
+        'j p p k'
+        ;
+    }
+
+    .card-1 {
+        grid-area: d;
+    }
+
+    .card-2 {
+        grid-area: jw;
+    }
+
+    .card-3 {
+        grid-area: j;
+    }
+
+    .card-4 {
+        grid-area: p;
+    }
+
+    .card-5 {
+        grid-area: k;
+    }
+
+}
